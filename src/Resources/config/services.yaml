@@ -1,0 +1,12 @@
+services:
+  kefisu_ziggy_bundle.ziggy:
+    class: Kefisu\Bundle\ZiggyBundle\Ziggy
+    public: true
+    arguments:
+      $router: '@router.default'
+
+  kefisu_twig_bundle.twig.extension:
+    class: Kefisu\Bundle\ZiggyBundle\Twig\ZiggyTwigExtension
+    tags: [ "twig.extension" ]
+    arguments:
+      - "@kefisu_ziggy_bundle.ziggy"
